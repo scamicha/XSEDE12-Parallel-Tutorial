@@ -6,8 +6,8 @@
 
 cd $PBS_O_WORKDIR
 
-if [ ! -x hello_mpi_v1 ]; then
-    mpicc -O3 -o hello_mpi_v1 hello_mpi_v1.c
+if [ ! -x hello_mpi_v2 ]; then
+    mpicc -O3 -o hello_mpi_v2 hello_mpi_v2.c
 fi
 
-mpirun -np 12 --hostfile $PBS_NODEFILE hello_mpi_v1 > hello_v1.out
+mpirun -np 12 --hostfile $PBS_NODEFILE hello_mpi_v2 > hello_v2.out
