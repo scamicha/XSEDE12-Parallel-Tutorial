@@ -4,6 +4,8 @@
 #PBS -q batch
 #PBS -j oe
 
+cd $PBS_O_WORKDIR
+
 if [ ! -x hello_omp_v1 ]; then
     gcc -O3 -o hello_omp_v1 -fopenmp hello_omp_v1.c
 fi
