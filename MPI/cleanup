@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ -e hello_mpi_v1 ]; then
+rm hello_omp_v1
+fi
+if [ -e hello_mpi_v2 ]; then
+rm hello_omp_v2
+fi
+rm *.out
+rm hello_mpi.o*
