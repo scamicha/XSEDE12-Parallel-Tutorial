@@ -1,0 +1,13 @@
+#!/bin/bash
+#PBS -l nodes=2:ppn=6,walltime=1:00
+#PBS -N hello_mpi
+#PBS -q batch
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+
+if [ ! -x hello_mpi_v1 ]; then
+    mpicc -O3 -o hello_mpi_v1 hello_mpi_v1.c
+fi
+
+mpirun -np 12 --hostfile $PBS_NODEFILE hello_mpi_v1 > hello_v1.out
