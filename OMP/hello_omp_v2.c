@@ -11,7 +11,8 @@ int main (int argc, char *argv[]) {
   {
     maxthreads = omp_get_max_threads();
     nthreads = omp_get_num_threads();
-    printf("There are %d threads available. %d of these threads are currently active. \n", nthreads);
+    printf("There are %d threads available. %d of these threads are currently active. \n",
+	   maxthreads,nthreads);
   }
 
  // Fork a team of threads and give a private copy of their thread number
@@ -21,7 +22,10 @@ int main (int argc, char *argv[]) {
     {
       maxthreads = omp_get_max_threads();
       nthreads = omp_get_num_threads();
-      printf("There are %d threads available. %d of these threads are currently active. \n", nthreads);
+      printf("There are %d threads available. %d of these threads are currently active. \n",
+	     maxthreads, nthreads);
+      tid = omp_get_thread_num();
+      printf("Hello World from thread = %d\n", tid);
     }
     // Obtain thread number
    tid = omp_get_thread_num();
