@@ -15,8 +15,6 @@ int main (int argc, char *argv[]) {
 	   maxthreads,nthreads);
   }
 
-#pragma omp barrier
-
  // Fork a team of threads and give a private copy of their thread number
 #pragma omp parallel private(tid)
   {
@@ -27,6 +25,7 @@ int main (int argc, char *argv[]) {
       printf("There are %d threads available. %d of these threads are currently active. \n",
 	     maxthreads, nthreads);
     }
+    #pragma omp barrier
     // Obtain thread number
    tid = omp_get_thread_num();
    printf("Hello World from thread = %d\n", tid);
