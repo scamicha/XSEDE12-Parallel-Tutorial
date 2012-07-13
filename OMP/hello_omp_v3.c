@@ -15,6 +15,8 @@ int main (int argc, char *argv[]) {
 	   maxthreads,nthreads);
   }
 
+#pragma omp barrier
+
  // Fork a team of threads and give a private copy of their thread number
 #pragma omp parallel private(tid)
   {
