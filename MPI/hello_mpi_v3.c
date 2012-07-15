@@ -39,16 +39,16 @@ int main (argc, argv)
     char msg[50];
     MPI_Status status;
     
-    printf( "Hello world from process %d of %d\n", rank, size );
+    printf( "From master: Hello world from process %d of %d\n", rank, size );
 
     for (x = 1; x < size; x++) {
       MPI_Recv(msg, 50, MPI_CHARACTER, x, tag, MPI_COMM_WORLD, &status);
-      printf("Msg from %d: '%s'\n", status.MPI_SOURCE, msg);
+      printf("From worker %d: '%s'\n", status.MPI_SOURCE, msg);
     }
   } else {
       char msg[50];
 
-      snprintf(msg, 50, "Hello from node rank %d.", rank);
+      snprintf(msg, 50,  "Hello world from process %d of %d\n", rank, size);
       MPI_Send(msg, 50, MPI_CHARACTER, 0, tag, MPI_COMM_WORLD);
    }
 
