@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ -e hello_omp_v1 ]; then
+rm hello_omp_v1
+fi
+if [ -e hello_omp_v2 ]; then
+rm hello_omp_v2
+fi
+if [ -e hello_omp_v3 ]; then
+rm hello_omp_v3
+fi
+rm *.out
+rm hello_omp.o*
