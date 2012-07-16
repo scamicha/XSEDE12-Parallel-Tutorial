@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ -e hello_hybrid_v1 ]; then
+rm hello_hybrid_v1
+fi
+rm *.out
+rm hello_hybrid.o*
