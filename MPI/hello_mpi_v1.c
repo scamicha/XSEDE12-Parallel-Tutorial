@@ -6,7 +6,7 @@ int main (argc, argv)
      char *argv[];
 {
   MPI_Init (&argc, &argv);	/* starts MPI */
-  printf( "Hello world!");
+  printf( "Hello world! \n");
   MPI_Finalize();              /* ends MPI */
   return 0;
 }

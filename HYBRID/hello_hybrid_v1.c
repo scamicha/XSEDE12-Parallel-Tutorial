@@ -11,7 +11,7 @@ int main (argc, argv)
   // Fork a team of threads
 #pragma omp parallel
   {
-    printf( "Hello world!");
+    printf( "Hello world! \n");
   }
   MPI_Finalize();              /* ends MPI */
   return 0;
