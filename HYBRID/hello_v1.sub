@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -l nodes=2:ppn=1,walltime=1:00
-#PBS -N hello_mpi
+#PBS -N hello_hybrid
 #PBS -q batch
 #PBS -j oe
 
