@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <mpi.h>
 
-
 int main (argc, argv)
      int argc;
      char *argv[];

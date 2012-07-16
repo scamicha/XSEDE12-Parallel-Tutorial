@@ -1,0 +1,13 @@
+#!/bin/bash
+#PBS -l nodes=2:ppn=1,walltime=1:00
+#PBS -N hello_mpi
+#PBS -q batch
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+
+if [ ! -x hello_hybrid_v1 ]; then
+    mpicc -O3 -fopenmp -o hello_hybrid_v1 hello_hybrid_v1.c
+fi
+
+mpirun -np 2 --hostfile $PBS_NODEFILE hello_hybrid_v1 > hello_v1.out
